@@ -1,24 +1,35 @@
 {
   "name": "easy-bp",
-  "version": "1.0.0",
+  "version": "0.0.4",
   "engines": {
     "node": "v8.11.1"
   },
   "description": "An easy boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "start-dev": "NODE_ENV='development' webpack -w & nodemon"
+    "postinstall": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "body-parser": "^1.19.0",
     "connect-session-sequelize": "^6.0.0",
+    "css-loader": "^3.0.0",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
+    "fs-extra": "^8.1.0",
+    "gulp": "^4.0.2",
     "history": "^4.9.0",
+    "lodash": "^4.17.14",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.1",
     "passport": "^0.4.0",
@@ -33,19 +44,7 @@
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "sequelize": "^5.8.12"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.0.2",
-    "babel-loader": "^7.1.5",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "css-loader": "^3.0.0",
-    "gulp": "^4.0.2",
+    "sequelize": "^5.8.12",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.0",
     "webpack-cli": "^3.3.5"

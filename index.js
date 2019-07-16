@@ -1,13 +1,32 @@
-const { app } = require('./server');
-const PORT = process.env.PORT || 3000;
-const { db } = require('./server/db/');
+var fs = require('fs-extra');
 
-// Syncs with DB and listens for connections on host and port
-// Put in {force: true} (to db.sync()) to update heroku db
-//Don't use in production, dangerous!
-db.sync().then(() => {
-  console.log('db synced.');
-  app.listen(PORT, () => {
-    console.log('Server Live on Port: ', PORT);
-  });
+fs.copy('src/client', '../../client', () => {
+  console.log('success client');
 });
+
+fs.copy('src/scripts', '../../scripts', () => {
+  console.log('success scripts');
+});
+
+fs.copy('src/server', '../../server', () => {
+  console.log('success server');
+});
+
+fs.copy('src/.babelrc', '../../.babelrc', () => {
+  console.log('success .babelrc');
+});
+
+fs.copy('src/.gitignore', '../../.gitignore', () => {
+  console.log('success .gitignore');
+});
+
+fs.copy('src/index.js', '../../index.js', () => {
+  console.log('success index.js');
+});
+
+fs.copy('src/webpack.config.js', '../../webpack.config.js', () => {
+  console.log('success webpack.config.js');
+});
+
+// "start": "nodemon index.js",
+// "start-dev": "NODE_ENV='development' webpack -w & nodemon"
